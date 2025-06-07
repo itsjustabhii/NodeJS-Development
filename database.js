@@ -11,6 +11,10 @@ async function main() { //connect to client
     const db = client.db(dbName)
     const collection = db.collection('User')
 
+    //Read
+    const findResult = await collection.find({}).toArray()
+    console.log("Found documents =>", findResult)
+
     return 'Done.'
 }
 
