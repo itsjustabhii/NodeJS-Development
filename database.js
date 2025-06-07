@@ -12,8 +12,24 @@ async function main() { //connect to client
     const collection = db.collection('User')
 
     //Read
-    const findResult = await collection.find({}).toArray()
+    const findResult = await collection.find({firstName:"Abhishek"}).toArray()
     console.log("Found documents =>", findResult)
+
+    //Creating a user
+    const data = {
+        firstName: "Shivani",
+        lastName: "Mungara",
+        city: "Hyderabad",
+        phonenumber: "8812309829"
+    }
+
+    //Write
+    // const insertResult = await collection.insertMany([data])
+    // console.log("Inserted documents",data)
+
+    // //Update
+    // const updateResult = await collection.updateOne({})
+
 
     return 'Done.'
 }
